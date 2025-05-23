@@ -1,59 +1,77 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <title>Portfolio de Souleymane Diallo</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mon Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <header class="mon-header">
-    <nav class="menu">
-      <div class="logo-nom">
-        <p><img src="moi.jpg" alt="Ma photo" class="photo"></p>
-        <p class="nom"><h2>SOULEYMANE DIALLO</h2></p>
-      </div>
-      <button class="menu-bnt" onclick="toggleMenu()">&#9776</button>
-      <p class="liens">
-        <a href="#apropos">À propos</a>
-        <a href="#projets">Projets</a>
-        <a href="#contact">Contact</a>
-      </p>
+  <header>
+    <nav>
+      <div class="logo">Mon Portfolio</div>
+      <button class="menu-toggle" id="menu-toggle">&#9776;</button>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#a-propos">À propos</a></li>
+        <li><a href="#projets">Projets</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
     </nav>
-    <div class="block-droit">
-      <p class="presentation">
-
-      </p>
+    <div class="header-content">
+      <div class="left">
+        <img src="moi.jpg" alt="Ma photo" class="photo" />
+        <h1>SOULEYMANE DIALLO</h1>
+      </div>
+      <div class="right">
+        <p>Developpeur passionné, je cree des codes revolutionnaire et des
+          interface modernes, performantes et responsives.
+          J'aime la science informatique, la technologie moderne, les codes
+          propres et les disigns élègants</p>
+      </div>
     </div>
   </header>
 
-  <section id="apropos">
-    <div>
-      
-    </div>
-    <div>
-      <h2>À propos de moi</h2>
-    <p>Je suis étudiant en informatique, en train d'apprendre Java, 
-        Python, HTML, CSS et JavaScript. 
-        Mon objectif est de maîtriser parfaitement 
-        ces langages d'ici fin 2026.</p>
-    </div>
-    
+  <section id="a-propos">
+    <h2>À propos</h2>
+    <p>
+      Je suis un étudiant passionné par l'informatique. J'apprends HTML, CSS, JavaScript, Python et Java.
+      Je souhaite devenir un développeur fullstack et construire des projets utiles.
+    </p>
   </section>
 
   <section id="projets">
-    <h2>Mes projets</h2>
-    <div></div>
-    <div></div>
+    <h2>Projets</h2>
+    <div class="projet">
+      <h3>Projet 1</h3>
+      <p>Une petite description de ce projet.</p>
+      <a href="https://mon-projet.netlify.app" target="_blank">Voir le site</a> |
+      <a href="https://github.com/mon-compte/projet1" target="_blank">Code source</a>
+    </div>
+    <div class="projet">
+      <h3>Projet 2</h3>
+      <p>Une autre description de projet.</p>
+      <a href="https://autre-projet.netlify.app" target="_blank">Voir le site</a> |
+      <a href="https://github.com/mon-compte/projet2" target="_blank">Code source</a>
+    </div>
   </section>
 
   <section id="contact">
-    <h2>Me contacter</h2>
-    <p>Tu peux m’écrire à : <a href="soulmamoudou0@gmail.com">soulmamoudou0@gmail.com</a></p>
-    <p>Telephone: +224 624-81-59-98</p>
+    <h2>Contact</h2>
+    <p>
+      Tu peux me contacter à : <a href="soulmamoudou0@gmail.com">soulmamoudou0@gamil.mon-com</a><br>
+      Telephone: +224 624-81-59-98
+    </p>
+    <form action="https://formspree.io/f/mnndygkk" method="POST">
+      <input type="text" name="nom" placeholder="Votre nom" required />
+      <input type="email" name="email" placeholder="Votre email" required />
+      <textarea name="message" placeholder="Votre message" required></textarea>
+      <button type="submit">Envoyer</button>
+    </form>
   </section>
-
   <footer>
     <p>&copy; 2025 Souleymane Diallo. Tous droits réservés.</p>
   </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
