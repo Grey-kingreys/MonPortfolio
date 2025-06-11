@@ -8,19 +8,28 @@ body {
   font-family: Arial, sans-serif;
   line-height: 1.6;
   background: #f8f8f8;
-  color: #333;
+  color: #333333;
+  padding-top: 38px;
 }
 
 header {
-  background: #007acc;
+  background: #333;
   color: white;
   padding: 20px;
 }
 
 nav {
+  position: fixed;
+  color: #94e2ec;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #487c94;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  box-shadow: 0 2px 5px rgba(19, 39, 185, 0.1);
+
 }
 
 .logo {
@@ -38,7 +47,7 @@ nav {
 }
 
 .nav-links a {
-  color: white;
+  color: #94e2ec;
   text-decoration: none;
 }
 
@@ -47,7 +56,7 @@ nav {
   font-size: 1.5em;
   background: none;
   border: none;
-  color: white;
+  color: #94e2ec;
   cursor: pointer;
 }
 
@@ -68,9 +77,9 @@ nav {
 }
 
 .photo {
-  width: 120px;
-  height: 120px;
-  border-radius: 50%;
+  width: 320px;
+  height: 320px;
+  border-radius: 10%;
   object-fit: cover;
   border: 3px solid white;
 }
@@ -79,7 +88,28 @@ section {
   padding: 40px 20px;
 }
 
+#a-propos{
+  display: flex;
+}
+
+.bnt-cv{
+  display: inline-block;
+  padding: 10px, 20px;
+  background-color: #007bff;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: background-color, 0,3s;
+}
+
+.bnt-cv:hover{
+  background-color: #0056b3;
+}
+
 .projet {
+  display: inline-block;
+  width: 48%;
   background: white;
   padding: 15px;
   margin-bottom: 20px;
@@ -87,11 +117,12 @@ section {
 }
 
 .projet a {
-  color: #007acc;
+  color: #0c042f;
   text-decoration: none;
 }
 
 form {
+  width: 30%;
   display: flex;
   flex-direction: column;
 }
@@ -123,12 +154,10 @@ footer {
   .nav-links {
     display: none;
     flex-direction: column;
-    background: #007acc;
+    background: #4f5051;
     position: absolute;
-    top: 60px;
-    right: 20px;
-    width: 150px;
-    border-radius: 5px;
+    top: 38px;
+    width: 100%;
   }
 
   .nav-links.active {
@@ -146,6 +175,28 @@ footer {
 
   .right {
     padding: 10px;
+  }
+
+  #a-propos{
+  flex-direction: column;
+    align-items: center;
+}
+#textepropos{
+  padding: 10px;
+}
+
+  .projet {
+    display: block;
+    width: 90%;
+    background: white;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+  }
+
+
+  form{
+    width: 80%;
   }
 }
 

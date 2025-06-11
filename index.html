@@ -19,7 +19,7 @@
     </nav>
     <div class="header-content">
       <div class="left">
-        <img src="moi.jpg" alt="Ma photo" class="photo" />
+        <img src="image/MOI.jpg" alt="Ma photo" class="photo" />
         <h1>SOULEYMANE DIALLO</h1>
       </div>
       <div class="right">
@@ -32,20 +32,38 @@
   </header>
 
   <section id="a-propos">
-    <h2>À propos</h2>
-    <p>
-      Je suis un étudiant passionné par l'informatique. J'apprends HTML, CSS, JavaScript, Python et Java.
-      Je souhaite devenir un développeur fullstack et construire des projets utiles.
-    </p>
+    <div class="header-content">
+      <h2>A PROPOS</h2>
+      <div class="left">
+        <img src="image/MOI1.jpg" alt="Ma photo" class="photo" />
+        <h1>SOULEYMANE DIALLO</h1>
+      </div>
+      <div class="right">
+        <p>Developpeur passionné, je crée des codes revolutionnaires et des
+          interface modernes, performantes et responsives.
+          J'aime la science informatique, la technologie moderne, les codes
+          propres et les disigns élègants</p>
+          <p>
+             <a href="CV.pdf" download class="bnt-cv">Telecharger mon CV</a>
+          </p>
+      </div>
+    </div>
+
+    
+    
   </section>
 
   <section id="projets">
     <h2>Projets</h2>
     <div class="projet">
       <h3>Projet 1</h3>
-      <p>Une petite description de ce projet.</p>
-      <a href="https://mon-projet.netlify.app" target="_blank">Voir le site</a> |
-      <a href="https://github.com/mon-compte/projet1" target="_blank">Code source</a>
+      <p>
+        Une intelligence artificiel qui a partir des informations
+         d'une voiture (marque, annee, transmission ou boite de vitesse, prix et quartier),
+          il predit si la voiture est occassion ou venante
+      </p>
+      <a href="https://huggingface.co/spaces/greykingreys/etat_prediction_voiture" target="_blank">Voir le site</a> |
+      <a href="https://github.com/Grey-kingreys/prediction_voiture" target="_blank">Code source</a>
     </div>
     <div class="projet">
       <h3>Projet 2</h3>
@@ -53,20 +71,30 @@
       <a href="https://autre-projet.netlify.app" target="_blank">Voir le site</a> |
       <a href="https://github.com/mon-compte/projet2" target="_blank">Code source</a>
     </div>
+    <div class="projet">
+      <h3>Projet 3</h3>
+      <p>Une autre description de projet.</p>
+      <a href="https://autre-projet.netlify.app" target="_blank">Voir le site</a> |
+      <a href="https://github.com/mon-compte/projet2" target="_blank">Code source</a>
+    </div>
   </section>
 
-  <section id="contact">
-    <h2>Contact</h2>
+  <section id="contact" class="cont">
+    <div class="contact">
+      <h2>Contact</h2>
     <p>
       Tu peux me contacter à : <a href="soulmamoudou0@gmail.com">soulmamoudou0@gamil.mon-com</a><br>
       Telephone: +224 624-81-59-98
     </p>
-    <form action="https://formspree.io/f/mnndygkk" method="POST">
+    </div>
+    <div class="formulaire">
+      <form action="https://formspree.io/f/mnndygkk" method="POST">
       <input type="text" name="nom" placeholder="Votre nom" required />
       <input type="email" name="email" placeholder="Votre email" required />
       <textarea name="message" placeholder="Votre message" required></textarea>
       <button type="submit">Envoyer</button>
     </form>
+    </div>
   </section>
   <footer>
     <p>&copy; 2025 Souleymane Diallo. Tous droits réservés.</p>
