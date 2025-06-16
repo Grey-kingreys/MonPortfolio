@@ -88,7 +88,12 @@ section {
   padding: 40px 20px;
 }
 
-#a-propos{
+#PROJETS, #PROPOS, #CONTACT{
+  text-align: center;
+  color: #0056b3;
+}
+
+#header-content{
   display: flex;
 }
 
