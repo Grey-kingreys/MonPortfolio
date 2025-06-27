@@ -1,137 +1,347 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Mon Portfolio</title>
-  <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mon Portfolio - SOULEYMANE DIALLO</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Custom CSS for animations and effects */
+        .project-card {
+            transition: all 0.3s ease;
+            transform: translateY(0);
+        }
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        .nav-link {
+            position: relative;
+        }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: #4f46e5;
+            transition: width 0.3s ease;
+        }
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        .active::after {
+            width: 100%;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .fade-in {
+            animation: fadeIn 0.6s ease forwards;
+        }
+        .delay-1 { animation-delay: 0.2s; }
+        .delay-2 { animation-delay: 0.4s; }
+        .delay-3 { animation-delay: 0.6s; }
+    </style>
 </head>
-<body>
-  <header>
-    <nav>
-      <div class="logo">Mon Portfolio</div>
-      <button class="menu-toggle" id="menu-toggle">&#9776;</button>
-      <ul class="nav-links" id="nav-links">
-        <li><a href="#a-propos">À propos</a></li>
-        <li><a href="#projets">Projets</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
+<body class="bg-gray-50 font-sans text-gray-800">
+    <!-- Navigation -->
+    <nav class="fixed w-full bg-white shadow-sm z-50">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <span class="text-xl font-bold text-indigo-600">SOULEYMANE DIALLO</span>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#about" class="nav-link text-gray-700 hover:text-indigo-600 px-3 py-2">À propos</a>
+                    <a href="#projects" class="nav-link text-gray-700 hover:text-indigo-600 px-3 py-2">Projets</a>
+                    <a href="#contact" class="nav-link text-gray-700 hover:text-indigo-600 px-3 py-2">Contact</a>
+                </div>
+                <div class="md:hidden flex items-center">
+                    <button id="menu-btn" class="text-gray-700 hover:text-indigo-600">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white shadow-lg">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#about" class="block px-3 py-2 text-gray-700 hover:text-indigo-600">À propos</a>
+                <a href="#projects" class="block px-3 py-2 text-gray-700 hover:text-indigo-600">Projets</a>
+                <a href="#contact" class="block px-3 py-2 text-gray-700 hover:text-indigo-600">Contact</a>
+            </div>
+        </div>
     </nav>
-    <div class="header-content">
-      <div class="left">
-        <img src="image/MOI.jpg" alt="Ma photo" class="photo" />
-        <h1>SOULEYMANE DIALLO</h1>
-      </div>
-      <div class="right">
-        <p>Developpeur passionné, je crée des codes revolutionnaires et des
-          interface modernes, performantes et responsives.
-          J'aime la science informatique, la technologie moderne, les codes
-          propres et les disigns élègants</p>
-      </div>
-    </div>
-  </header>
 
-  <section id="a-propos">
-    <h2 id = "PROPOS">A PROPOS</h2>
-    <div class="header-content">
-      <div class="left">
-        <img src="image/MOI1.jpg" alt="Ma photo" class="photo" />
-        <h1>SOULEYMANE DIALLO</h1>
-      </div>
-      <div class="right">
-        <p>Developpeur passionné, je crée des codes revolutionnaires et des
-          interface modernes, performantes et responsives.
-          J'aime la science informatique, la technologie moderne, les codes
-          propres et les disigns élègants</p>
-          <p>
-             <a href="CV.pdf" download class="bnt-cv">Telecharger mon CV</a>
-          </p>
-      </div>
-    </div>
+    <!-- Hero Section -->
+    <header class="pt-24 pb-16 md:pt-32 md:pb-24 bg-gradient-to-r from-indigo-50 to-purple-50">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="md:flex md:items-center md:justify-between">
+                <div class="md:w-1/2 fade-in">
+                    <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">Bonjour, je suis Souleymane Diallo</h1>
+                    <p class="text-xl text-gray-600 mb-8">Développeur spécialisé en Intelligence Artificielle</p>
+                    <a href="#projects" class="bg-indigo-600 hover:bg-indigo-700 text-white px-6 py-3 rounded-lg font-medium transition duration-300 inline-block">
+                        Voir mes projets
+                    </a>
+                </div>
+                <div class="md:w-1/2 mt-10 md:mt-0 flex justify-center fade-in delay-1">
+                    <div class="relative w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-indigo-100 shadow-lg">
+                        <img src="/image/MOI1.jpg" 
+                             alt="Aissatou Barry" 
+                             class="w-full h-full object-cover">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
 
-    
-    
-  </section>
+    <!-- About Section -->
+    <section id="about" class="py-16 md:py-24 bg-white">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 fade-in">À propos de moi</h2>
+            <div class="md:flex md:items-center md:space-x-12">
+                <div class="md:w-1/2 mb-10 md:mb-0 fade-in">
+                    <p class="text-lg text-gray-600 mb-6">
+                        Developpeur passionné, je crée des codes revolutionnaires et des
+                        interface modernes, performantes et responsives.
+                        J'aime la science informatique, la technologie moderne, les codes
+                        propres et les disigns élègants et l'IA
+                    </p>
+                    <p class="text-lg text-gray-600 mb-6">
+                        Passionné par l'intelligence artificielle et ses applications concrètes, 
+                        j'ai récemment terminé une formation intensive en IA qui m'a permis de développer 
+                        plusieurs projets pratiques.
+                    </p>
+                    <p class="text-lg text-gray-600 mb-6">
+                        Mon parcours m'a donné l'opportunité de travailler sur des technologies de pointe dans les domaines du traitement du langage naturel, de la vision par ordinateur et de la reconnaissance vocale.
+                    </p>
+                    <p class="text-lg text-gray-600">
+                        Je suis particulièrement intéressée par les applications qui facilitent la communication interculturelle et l'accès à l'information, comme en témoignent mes projets de traduction et de transcription.
+                    </p>
+                </div>
+                <div class="md:w-1/2 fade-in delay-1">
+                    <div class="bg-gray-50 p-8 rounded-xl shadow-sm">
+                        <h3 class="text-xl font-semibold mb-4 text-indigo-600">Compétences techniques</h3>
+                        <div class="space-y-4">
+                            <div>
+                                <h4 class="font-medium mb-2">Traitement du Langage Naturel (NLP)</h4>
+                                <div class="w-full bg-gray-200 rounded-full h-2.5">
+                                    <div class="bg-indigo-600 h-2.5 rounded-full" style="width: 85%"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <h4 class="font-medium mb-2">Vision par Ordinateur</h4>
+                                <div class="w-full bg-gray-200 rounded-full h-2.5">
+                                    <div class="bg-indigo-600 h-2.5 rounded-full" style="width: 75%"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <h4 class="font-medium mb-2">Reconnaissance Vocale</h4>
+                                <div class="w-full bg-gray-200 rounded-full h-2.5">
+                                    <div class="bg-indigo-600 h-2.5 rounded-full" style="width: 80%"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <h4 class="font-medium mb-2">Déploiement de Modèles</h4>
+                                <div class="w-full bg-gray-200 rounded-full h-2.5">
+                                    <div class="bg-indigo-600 h-2.5 rounded-full" style="width: 90%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-  <section id="projets">
-    <h2 id="PROJETS">Projets</h2>
-    <div class="projet">
-      <h3>prediction etat voiture</h3>
-      <p>
-        Une intelligence artificiel qui a partir des informations
-         d'une voiture (marque, annee, transmission ou boite de vitesse, prix et quartier),
-          il predit si la voiture est occassion ou venante
-      </p>
-      <a href="https://huggingface.co/spaces/greykingreys/etat_prediction_voiture" target="_blank">Voir le site</a> |
-      <a href="https://github.com/Grey-kingreys/prediction_voiture" target="_blank">Code source</a>
-    </div>
-    <div class="projet">
-      <h3>Diagnostic_maladie</h3>
-      <p>
-        un project IA python qui permet, a partir de quelques symptome, de predire de quelle maladie il s'agit,
-        description de la maladie, niveau de gravité et les precaution a prendre
-      </p>
-      <a href="https://huggingface.co/spaces/greykingreys/Diagnostic_maladie" target="_blank">Voir le site</a> |
-      <a href="https://github.com/Grey-kingreys/Diagnostic_maladie" target="_blank">Code source</a>
-    </div>
-    <div class="projet">
-      <h3>Traduction</h3>
-      <p>
-        Une application faite avec python qui permet de traduit 5 langue(anglais, arabe, japonais, allemand, espagnol)
-        en français. <br>
-        Note: c'est pas un modele d'IA juste un code avec avec deep-translator et une interface avec gradio
-      </p>
-      <a href="https://huggingface.co/spaces/greykingreys/Traduction" target="_blank">Voir le site</a> |
-      <a href="https://github.com/Grey-kingreys/Traductions" target="_blank">Code source</a>
-    </div>
+    <!-- Projects Section -->
+    <section id="projects" class="py-16 md:py-24 bg-gray-50">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 fade-in">Mes Projets</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Project 1 -->
+                <div class="project-card bg-white rounded-xl overflow-hidden shadow-md fade-in delay-1">
+                    <div class="h-48 bg-gradient-to-r from-indigo-500 to-purple-600 flex items-center justify-center">
+                        <i class="fas fa-language text-white text-6xl"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">prediction etat voiture</h3>
+                        <p class="text-gray-600 mb-4">Une intelligence artificiel qui a partir des informations
+                            d'une voiture (marque, annee, transmission ou boite de vitesse, prix et quartier),
+                            il predit si la voiture est occassion ou venante</p>
+                        <div class="flex justify-between items-center">
+                            <a href="https://huggingface.co/spaces/greykingreys/etat_prediction_voiture" target="_blank" class="text-indigo-600 hover:text-indigo-800 font-medium flex items-center">
+                                Voir le projet 
+                                <i class="fas fa-external-link-alt ml-2 text-sm"></i>
+                            </a>
+                            <a href="https://github.com/Grey-kingreys/prediction_voiture" target="_blank" class="text-indigo-600 hover:text-indigo-800 font-medium flex items-center">
+                                Voir le code
+                                <i class="fab fa-github ml-2 text-sm"></i>
+                            </a>
+                            <span class="bg-indigo-100 text-indigo-800 text-xs px-2 py-1 rounded-full">NLP</span>
+                        </div>
+                    </div>
+                </div>
 
-    <div class="projet">
-      <h3>Performance etudiant</h3>
-      <p>
-        Une IA faite avec python qui permet de predire les Performances d'un etudiant
-        a partir de quelquel un de ses informations comme: heures de cours, heures de repos, est_ce qu'il revise a la maison
-      </p>
-      <a href="https://huggingface.co/spaces/greykingreys/Pred_student_performence" target="_blank">voir le site</a> |
-      <a href="https://github.com/Grey-kingreys/student_performance" target="_blank">Code source</a>
-    </div>
-  </section>
+                <!-- Project 2 -->
+                <div class="project-card bg-white rounded-xl overflow-hidden shadow-md fade-in delay-2">
+                    <div class="h-48 bg-gradient-to-r from-blue-500 to-cyan-600 flex items-center justify-center">
+                        <i class="fas fa-image text-white text-6xl"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Traduction</h3>
+                        <p class="text-gray-600 mb-4">
+                            Une application faite avec python qui permet de traduit 5 langue(anglais, arabe, japonais, allemand, espagnol)
+                            en français. <br>
+                            Note: c'est pas un modele d'IA juste un code avec avec deep-translator et une interface avec gradio
+                        </p>
+                        <div class="flex justify-between items-center">
+                            <a href="https://huggingface.co/spaces/greykingreys/Traduction" target="_blank" class="text-indigo-600 hover:text-indigo-800 font-medium flex items-center">
+                                Voir le projet <i class="fas fa-external-link-alt ml-2 text-sm"></i>
+                            </a>
+                            <a href="https://github.com/Grey-kingreys/Traductions" target="_blank" class="text-indigo-600 hover:text-indigo-800 font-medium flex items-center">
+                                Voir le code
+                                <i class="fab fa-github ml-2 text-sm"></i>
+                            </a>
+                            <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded-full">Vision</span>
+                        </div>
+                    </div>
+                </div>
 
-  <section id="contact" class="cont">
-    <div class="contact">
-      <h2 id="CONTACT">Contact</h2>
-      <p>
-        
-        vous pouvez me contacter à : <a href="mailto:soulmamoudou0@gmail.com" >soulmamoudou0@gamil.mon-com</a>
-      </p>
-      <p>
-        Telephone: +224 624-81-59-98
-      </p>
-      <p>
-        <a href="http://github.com/Grey-kingreys"><img src="/image/mdi--github.svg" alt="github" ></a>
-        <a href="http://wa.me/224624815998"><img src="/image/ic--baseline-whatsapp.svg" alt="whatsapp"></a>
-        <a href="https://www.linkedin.com/in/souleymane-diallo-1b6424229?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"><img src="/image/mdi--linkedin.svg" alt="LinkedIn"></a>
-      </p>
-    </div>
-    <div class="formulaire">
-      <form action="https://formspree.io/f/mnndygkk" method="POST">
-      <input type="text" name="nom" placeholder="Votre nom" required />
-      <input type="email" name="email" placeholder="Votre email" required />
-      <textarea name="message" placeholder="Votre message" required></textarea>
-      <button type="submit">Envoyer</button>
-    </form>
-    </div>
-  </section>
-  <footer>
-    <p>&copy; 2025 Souleymane Diallo. Tous droits réservés.</p>
-    <p>
-      <a href="http://github.com/Grey-kingreys"><img src="/image/mdi--github.svg" alt="github" ></a>
-      <a href="http://wa.me/224624815998"><img src="/image/ic--baseline-whatsapp.svg" alt="whatsapp"></a>
-      <a href="https://www.linkedin.com/in/souleymane-diallo-1b6424229?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"><img src="/image/mdi--linkedin.svg" alt="LinkedIn"></a>
-      <a href="mailto:soulmamoudou0@gmail.com"><img src="/image/enveloppe.png" alt="email"></a>
-      <a href="https://x.com/Greyykzkingreys?t=QMFKK9j4F1dken0aQMgW5w&s=09"><img src="/image/twitter-alt-circle.png" alt=""></a>
-    </p>
-  </footer>
+                <!-- Project 3 -->
+                <div class="project-card bg-white rounded-xl overflow-hidden shadow-md fade-in delay-3">
+                    <div class="h-48 bg-gradient-to-r from-purple-500 to-pink-600 flex items-center justify-center">
+                        <i class="fas fa-microphone-alt text-white text-6xl"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Performance etudiant</h3>
+                        <p class="text-gray-600 mb-4">
+                            Une IA faite avec python qui permet de predire les Performances d'un etudiant
+                            a partir de quelquel un de ses informations comme: heures de cours, heures de repos,
+                            est_ce qu'il revise a la maison
+                        </p>
+                        <div class="flex justify-between items-center">
+                            <a href="https://huggingface.co/spaces/greykingreys/Pred_student_performence" target="_blank" class="text-indigo-600 hover:text-indigo-800 font-medium flex items-center">
+                                Voir le projet <i class="fas fa-external-link-alt ml-2 text-sm"></i>
+                            </a>
+                            <a href="https://github.com/Grey-kingreys/student_performance" target="_blank" class="text-indigo-600 hover:text-indigo-800 font-medium flex items-center">
+                                Voir le code
+                                <i class="fab fa-github ml-2 text-sm"></i>
+                            </a>
+                            <span class="bg-purple-100 text-purple-800 text-xs px-2 py-1 rounded-full">Audio</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-  <script src="script.js"></script>
-</body>
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 md:py-24 bg-white">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 fade-in">Contactez-moi</h2>
+            <div class="md:flex md:space-x-12">
+                <div class="md:w-1/2 mb-10 md:mb-0 fade-in">
+                    <h3 class="text-xl font-semibold mb-6 text-indigo-600">Informations de contact</h3>
+                    <div class="space-y-4">
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 bg-indigo-100 p-3 rounded-lg text-indigo-600">
+                                <i class="fas fa-envelope text-lg"></i>
+                            </div>
+                            <div class="ml-4">
+                                <h4 class="font-medium text-gray-900">Email</h4>
+                                <p class="text-gray-600">soulmamoudou0@gmail.com</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 bg-indigo-100 p-3 rounded-lg text-indigo-600">
+                                <i class="fas fa-phone-alt text-lg"></i>
+                            </div>
+                            <div class="ml-4">
+                                <h4 class="font-medium text-gray-900">Téléphone</h4>
+                                <p class="text-gray-600">+224 624 81 59 98</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 bg-indigo-100 p-3 rounded-lg text-indigo-600">
+                                <i class="fas fa-map-marker-alt text-lg"></i>
+                            </div>
+                            <div class="ml-4">
+                                <h4 class="font-medium text-gray-900">Localisation</h4>
+                                <p class="text-gray-600">Conakry, Guinée</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-8">
+                        <h3 class="text-xl font-semibold mb-4 text-indigo-600">Réseaux sociaux</h3>
+                        <div class="flex space-x-4">
+                            <a href="www.linkedin.com/in/souleymane-diallo-1b6424229" class="bg-gray-100 hover:bg-indigo-100 p-3 rounded-full text-gray-700 hover:text-indigo-600 transition duration-300">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                            <a href="https://github.com/Grey-kingreys" class="bg-gray-100 hover:bg-indigo-100 p-3 rounded-full text-gray-700 hover:text-indigo-600 transition duration-300">
+                                <i class="fab fa-github"></i>
+                            </a>
+                            <a href="https://x.com/Greyykzkingreys?t=L7w-roHOz-c3y_E-8e3RPQ&s=09" class="bg-gray-100 hover:bg-indigo-100 p-3 rounded-full text-gray-700 hover:text-indigo-600 transition duration-300">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="md:w-1/2 fade-in delay-1">
+                    <form action="https://formspree.io/f/mnndygkk" method="POST"  class="space-y-6" >
+                        <div>
+                            <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Nom complet</label>
+                            <input type="text" id="name" name="name" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-200 focus:border-indigo-500 transition duration-300" placeholder="Votre nom">
+                        </div>
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email</label>
+                            <input type="email" id="email" name="email" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-200 focus:border-indigo-500 transition duration-300" placeholder="votre@email.com">
+                        </div>
+                        <div>
+                            <label for="message" class="block text-sm font-medium text-gray-700 mb-1">Message</label>
+                            <textarea id="message" name="message" rows="4" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-200 focus:border-indigo-500 transition duration-300" placeholder="Votre message..."></textarea>
+                        </div>
+                        <div>
+                            <button type="submit" class="w-full bg-indigo-600 hover:bg-indigo-700 text-white px-6 py-3 rounded-lg font-medium transition duration-300">
+                                Envoyer le message
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-8">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="md:flex md:items-center md:justify-between">
+                <div class="text-center md:text-left mb-4 md:mb-0">
+                    <p>&copy; 2025 Souleymane Diallo. Tous droits réservés.</p>
+                </div>
+                <div class="flex justify-center md:justify-end space-x-6">
+                    <a href="www.linkedin.com/in/souleymane-diallo-1b6424229" class="text-gray-400 hover:text-white transition duration-300">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="https://github.com/Grey-kingreys" class="text-gray-400 hover:text-white transition duration-300">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://x.com/Greyykzkingreys?t=L7w-roHOz-c3y_E-8e3RPQ&s=09" class="text-gray-400 hover:text-white transition duration-300">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to top button -->
+    <button id="back-to-top" class="fixed bottom-8 right-8 bg-indigo-600 text-white p-3 rounded-full shadow-lg opacity-0 invisible transition-all duration-300">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+  <script src="/js/script.js"></script>
 </html>
