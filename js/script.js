@@ -75,13 +75,3 @@ window.addEventListener('scroll', function() {
         }
     });
 });
-
-// Form submission (example)
-// const form = document.querySelector('form');
-// if (form) {
-//     form.addEventListener('submit', function(e) {
-//         e.preventDefault();
-//         alert('Merci pour votre message! Je vous répondrai dès que possible.');
-//         form.reset();
-//     });
-// }
